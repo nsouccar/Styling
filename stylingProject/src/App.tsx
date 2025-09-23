@@ -5,24 +5,23 @@ import { useState } from 'react'
 
 function App() {
 
-  const [currentState, setState] = useState(false)
-  let buttonColor: string = "#FFFFFF";
-  let backgroundColor: string = "#FFFFFF";
+  const [[buttonColor, backgroundColor], setState] = useState(["#FFFFFF", "#FFFFFF"])
+
 
 
   function changeColor() {
 
 
-    if (currentState) {
-      buttonColor = "#359845";
-      backgroundColor = "#E2FFE5";
-      setState(false)
+    if (buttonColor === "#FFFFFF") {
+
+      setState(["#359845", "#E2FFE5"])
+
 
 
     } else {
-      buttonColor = "#FFFFFF";
-      backgroundColor = "#FFFFFF";
-      setState(true)
+
+      setState(["#FFFFFF", "#FFFFFF"])
+
 
     }
 
@@ -31,10 +30,10 @@ function App() {
 
 
   return (
-    <div className="bg-[#d8d8d87f] h-screen w-screen m-0 font-(family-name:--v)">
-      <h1>Task</h1>
+    <div className="flex flex-col gap-0 bg-[#d8d8d87f] h-screen w-screen m-0 font-(family-name:--v) ">
+      <h1 className="mt-10 mb-10 ml-20 text-7xl">Task</h1>
 
-      <div className="flex flex-row gap-x-0 font-family font-sans bg-white  w-100%  h-[8%] rounded-xl items-center m-20 p-5">
+      <div style={{ backgroundColor: backgroundColor }} className="flex flex-row gap-x-0 font-family font-san  w-100%  h-[8%] rounded-xl items-center mr-20 ml-20 m-t-5 m-b-5  p-5">
 
         <div className=" h-full w-1/8 flex flex-row items-center justify-center ">
 
